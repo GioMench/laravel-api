@@ -3,7 +3,7 @@
 @section('content')
     <header class="py-3 bg-dark text-light">
         <div class="container d-flex align-items-center justify-content-between">
-            <h1>Project</h1>
+            <h1>Projects</h1>
 
             <a class="btn btn-primary" href="{{ route('admin.projects.create') }}"> New Project</a>
         </div>
