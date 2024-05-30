@@ -97,6 +97,7 @@
                     </tbody>
                 </table>
             </div>
+            {{$projects->links('pagination::bootstrap-5')}}
         </div>
     </section>
 @endsection
