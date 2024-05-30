@@ -95,8 +95,8 @@ class ProjectController extends Controller
 
         //validate
         $validated = $request->validated();
-        $slug = Str::slug($request->project_name, '-');
-        $validated['slug'] = $slug;
+        /*$slug = Str::slug($request->project_name, '-');
+        $validated['slug'] = $slug;*/
 
         if($request->has('preview_image')){
             if($project->preview_image){
