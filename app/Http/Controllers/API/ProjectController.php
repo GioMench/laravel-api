@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use PhpParser\Builder\Function_;
 
 class ProjectController extends Controller
 {
@@ -17,5 +18,23 @@ class ProjectController extends Controller
             'success' => true,
             'projects' => $projects
         ]);
+    }
+
+    public function show($id){
+
+        $project = Project::with('type', 'techology')->where('id', $id)->first();
+
+        if($project){
+
+            return response()->json([
+                'success'=> true,
+                'response'=> $project,
+            ]);
+        }else{
+            return response()->json([
+                'success' => false,
+                'response' => '404 Sorry nothing found!',
+            ]);
+        }
     }
 }
